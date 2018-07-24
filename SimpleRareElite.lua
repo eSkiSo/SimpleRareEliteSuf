@@ -193,7 +193,10 @@ local function SetSimpleRareElite(Texture)
 	
 		--Blurry		
 		
-		if TargetFrame == SUFUnittarget then
+		if TargetFrame == ElvUF_Target then
+			SimpleRareElite:SetSize(120, 120)	
+			SimpleRareElite:SetPoint('TOPRIGHT', TargetFrame, 'TOPRIGHT', 47, 25)
+		elseif TargetFrame == SUFUnittarget then
 			SimpleRareElite:SetSize(120, 120)	
 			SimpleRareElite:SetPoint('TOPRIGHT', TargetFrame, 'TOPRIGHT', 47, 25)
 		elseif TargetFrame == oUF_TukuiTarget then
@@ -207,7 +210,9 @@ local function SetSimpleRareElite(Texture)
 		
 		SimpleRareElite:SetSize(256, 128)		
 		
-		if TargetFrame == SUFUnittarget then
+		if TargetFrame == ElvUF_Target then
+			SimpleRareElite:SetPoint('TOPRIGHT', TargetFrame, 'TOPRIGHT', 100, 15)
+		elseif TargetFrame == SUFUnittarget then
 			SimpleRareElite:SetPoint('TOPRIGHT', TargetFrame, 'TOPRIGHT', 100, 15)
 		elseif TargetFrame == oUF_TukuiTarget then
 			SimpleRareElite:SetPoint('TOPRIGHT', TargetFrame, 'TOPRIGHT', 102, 15)
@@ -218,7 +223,10 @@ local function SetSimpleRareElite(Texture)
 	
 		--Modern		
 		
-		if TargetFrame == SUFUnittarget then
+		if TargetFrame == ElvUF_Target then
+			SimpleRareElite:SetSize(100, 100)
+			SimpleRareElite:SetPoint('TOPRIGHT', TargetFrame, 'TOPRIGHT', 36, 8)
+		elseif TargetFrame == SUFUnittarget then
 			SimpleRareElite:SetSize(100, 100)
 			SimpleRareElite:SetPoint('TOPRIGHT', TargetFrame, 'TOPRIGHT', 36, 8)			
 		elseif TargetFrame == oUF_TukuiTarget then
@@ -230,7 +238,10 @@ local function SetSimpleRareElite(Texture)
 	
 		--Tiny	
 		
-		if TargetFrame == SUFUnittarget then
+		if TargetFrame == ElvUF_Target then
+			SimpleRareElite:SetSize(100, 100)
+			SimpleRareElite:SetPoint('TOPRIGHT', TargetFrame, 'TOPRIGHT', 33, 8)	
+		elseif TargetFrame == SUFUnittarget then
 			SimpleRareElite:SetSize(100, 100)
 			SimpleRareElite:SetPoint('TOPRIGHT', TargetFrame, 'TOPRIGHT', 33, 8)			
 		elseif TargetFrame == oUF_TukuiTarget then
@@ -261,7 +272,7 @@ local function CreateSimpleRareElite()
 		
 		if event == 'PLAYER_LOGIN' then	
 						
-			TargetFrame = SUFUnittarget or oUF_TukuiTarget
+			TargetFrame = ElvUF_Target or oUF_TukuiTarget or SUFUnittarget
 			
 			if not TargetFrame then 
 				return 
