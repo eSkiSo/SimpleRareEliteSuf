@@ -1,6 +1,6 @@
-## Interface: 70000
+## Interface: 80000
 ## Title: SimpleRareElite
-## Version: 1.28
+## Version: 1.30
 ## Author: Meky / Credits: Hati / SUF: Eskiso
 ## Notes: Display textures for Boss/Elite/Rare/RareElite on Shadowed Unit Frames
 ## SavedVariablesPerCharacter: skin, fl
