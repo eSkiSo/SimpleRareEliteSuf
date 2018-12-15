@@ -2,6 +2,37 @@ SRE_VERSION = "|cFF00FF00SimpleRareElite v1.28|r";
 local SimpleRareElite = CreateFrame('Frame', 'SimpleRareElite', UIParent)
 local TargetFrame
 
+local waitTable = {};
+local waitFrame = nil;
+
+function SimpleRareElite_wait(delay, func, ...)
+  if(type(delay)~="number" or type(func)~="function") then
+    return false;
+  end
+  if(waitFrame == nil) then
+    waitFrame = CreateFrame("Frame","WaitFrame", UIParent);
+    waitFrame:SetScript("onUpdate",function (self,elapse)
+      local count = #waitTable;
+      local i = 1;
+      while(i<=count) do
+        local waitRecord = tremove(waitTable,i);
+        local d = tremove(waitRecord,1);
+        local f = tremove(waitRecord,1);
+        local p = tremove(waitRecord,1);
+        if(d>elapse) then
+          tinsert(waitTable,i,{d-elapse,f,p});
+          i = i + 1;
+        else
+          count = count - 1;
+          f(unpack(p));
+        end
+      end
+    end);
+  end
+  tinsert(waitTable,{delay,func,{...}});
+  return true;
+end
+
 -- Option GUI
 function SimpleRareElite_GUI()
 	
@@ -188,7 +219,6 @@ local function SetSimpleRareElite(Texture)
 	SimpleRareElite.Texture:SetTexture('Interface\\AddOns\\SimpleRareElite\\Textures\\'.. skin ..'\\'..Texture)
 	SimpleRareElite.Texture:SetTexCoord(0, 1, 0, 1)
 	SimpleRareElite:ClearAllPoints()	
-	
 	if skin == 'blurry' then
 	
 		--Blurry		
@@ -256,6 +286,21 @@ local function SetSimpleRareElite(Texture)
 	
 end
 
+-- Function to be called after waiting for other addons to load
+local function FirstCreateSimpleRareElite(self)
+	TargetFrame = ElvUF_Target or oUF_TukuiTarget or SUFUnittarget
+	if not TargetFrame then 
+		return 
+	end					
+	fl = fl or 12
+	SimpleRareElite:SetParent(TargetFrame)
+	SimpleRareElite.Texture = SimpleRareElite:CreateTexture('ARTWORK')				
+	SimpleRareElite:SetFrameLevel(fl)
+	SimpleRareElite.Texture:SetAllPoints()					
+	
+	self:RegisterEvent('PLAYER_TARGET_CHANGED')
+end
+
 -- Load and Show Textures
 local function CreateSimpleRareElite()	
 	
@@ -270,20 +315,9 @@ local function CreateSimpleRareElite()
 			fl = fl or 12
 		end
 		
-		if event == 'PLAYER_LOGIN' then	
-						
-			TargetFrame = ElvUF_Target or oUF_TukuiTarget or SUFUnittarget
-			
-			if not TargetFrame then 
-				return 
-			end					
-		
-			SimpleRareElite:SetParent(TargetFrame)
-			SimpleRareElite.Texture = SimpleRareElite:CreateTexture('ARTWORK')				
-			SimpleRareElite:SetFrameLevel(fl)
-			SimpleRareElite.Texture:SetAllPoints()					
-			
-			self:RegisterEvent('PLAYER_TARGET_CHANGED')
+		if event == 'PLAYER_LOGIN' then
+			-- wait 1 second for Tukui to do his loading before trying to check for his existence
+			SimpleRareElite_wait(1, FirstCreateSimpleRareElite, self)		
 			
 		elseif event == "PLAYER_TARGET_CHANGED" then
 		
@@ -319,15 +353,3 @@ end
 CreateSimpleRareElite();
 InitSlashCommands();
 SimpleRareElite_GUI();
-
-
-
-
-
-
-
-
-
-
-
-
