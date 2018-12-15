@@ -1,4 +1,4 @@
-SRE_VERSION = "|cFF00FF00SimpleRareElite v1.28|r";
+SRE_VERSION = "|cFF00FF00SimpleRareElite v1.30|r";
 local SimpleRareElite = CreateFrame('Frame', 'SimpleRareElite', UIParent)
 local TargetFrame
 
