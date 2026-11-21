@@ -1,10 +1,38 @@
-## Interface: 80000
-## Title: SimpleRareElite
-## Version: 1.30
-## Author: Meky / Credits: Hati / SUF: Eskiso
+## Interface: 120000,120001,120005,120007,120100,120105,120107,16001
+## Title: |cFF1ABC9CSimpleRareElite|r
+## Name: SimpleRareElite
+## Version: 1.31
+## Author: Meky / Credits: Hati / SUF: Eskiso / Mod: Kirri
 ## Notes: Display textures for Boss/Elite/Rare/RareElite on Shadowed Unit Frames
+## Category-enUS: Unit Frames
+## Category-deDE: Einheitenfenster
+## Category-esES: Marcos de unidad
+## Category-esMX: Marcos de unidad
+## Category-frFR: Cadres d'unité
+## Category-itIT: Cornici unità
+## Category-koKR: 유닛 프레임
+## Category-ptBR: Quadros de unidade
+## Category-ruRU: Рамки юнитов
+## Category-zhCN: 单位框架
+## Category-zhTW: 單位框架
+## Notes-enUS: Displays Boss, Elite, Rare, and RareElite textures on unit frames.|nSupports Shadowed Unit Frames, ElvUI, and Tukui.|nChoose between Blurry, Classic, Modern, and Tiny texture styles.
+## Notes-deDE: Zeigt Boss-, Elite-, Rare- und RareElite-Texturen auf Einheitenfenstern an.|nUnterstützt Shadowed Unit Frames, ElvUI und Tukui.|nWähle zwischen Blurry, Classic, Modern und Tiny Texturstilen.
+## Notes-esES: Muestra texturas de Jefe, Élite, Raro y RaroÉlite en los marcos de unidad.|nCompatible con Shadowed Unit Frames, ElvUI y Tukui.|nElige entre estilos de textura Blurry, Classic, Modern y Tiny.
+## Notes-esMX: Muestra texturas de Jefe, Élite, Raro y RaroÉlite en los marcos de unidad.|nCompatible con Shadowed Unit Frames, ElvUI y Tukui.|nElige entre estilos de textura Blurry, Classic, Modern y Tiny.
+## Notes-frFR: Affiche les textures de Boss, Élite, Rare et RareÉlite sur les cadres d'unité.|nPrend en charge Shadowed Unit Frames, ElvUI et Tukui.|nChoisissez entre les styles de texture Blurry, Classic, Modern et Tiny.
+## Notes-itIT: Mostra texture di Boss, Elite, Raro e RaroElite sui frame delle unità.|nSupporta Shadowed Unit Frames, ElvUI e Tukui.|nScegli tra gli stili di texture Blurry, Classic, Modern e Tiny.
+## Notes-koKR: 유닛 프레임에 보스, 정예, 희귀, 희귀정예 텍스처를 표시합니다.|nShadowed Unit Frames, ElvUI 및 Tukui를 지원합니다.|nBlurry, Classic, Modern, Tiny 텍스처 스타일 중에서 선택하세요.
+## Notes-ptBR: Exibe texturas de Chefe, Elite, Raro e RaroElite nos quadros de unidade.|nSuporta Shadowed Unit Frames, ElvUI e Tukui.|nEscolha entre estilos de textura Blurry, Classic, Modern e Tiny.
+## Notes-ruRU: Отображает текстуры Босса, Элиты, Редкого и Редкого элитного на рамках юнитов.|nПоддерживает Shadowed Unit Frames, ElvUI и Tukui.|nВыберите между стилями текстур Blurry, Classic, Modern и Tiny.
+## Notes-zhCN: 在单位框架上显示首领、精英、稀有和稀有精英纹理。|n支持Shadowed Unit Frames、ElvUI和Tukui。|n选择Blurry、Classic、Modern和Tiny纹理风格。
+## Notes-zhTW: 在單位框架上顯示首領、精英、稀有和稀有精英紋理。|n支援Shadowed Unit Frames、ElvUI和Tukui。|n選擇Blurry、Classic、Modern和Tiny紋理風格。
 ## SavedVariablesPerCharacter: skin, fl
-## OptionalDeps: Shadowed Unit Frames
+## OptionalDeps: ElvUI
 
+# X-Contributors: 
+# X-GitHub-Repo: 
+## X-Curse-Project-ID: simplerareelite
+## X-Localization: enUS
 
-SimpleRareElite.lua
+Core.lua
+Config.lua
