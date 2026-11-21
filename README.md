@@ -30,8 +30,8 @@ The original addon stopped working after a WoW patch. This fork includes:
 
 ## Installation
 
-1. `git clone https://github.com/Kirri777/SimpleRareElite.git`
-2. Copy `SimpleRareElite` folder to `World of Warcraft\_retail_\Interface\AddOns\`
+1. `git clone https://github.com/eSkiSo/SimpleRareEliteSuf.git`
+2. Copy `SimpleRareElite` folder to `World of Warcraft\_forever_\Interface\AddOns\`
 3. Restart WoW or `/reload`
 
 Or download the [latest release](https://github.com/eSkiSo/SimpleRareEliteSuf/releases) and extract to `Interface\AddOns\`.
